@@ -7,7 +7,7 @@
     "db-callback": "bin/index.js"
   },
   "scripts": {
-    "test": "vitest --globals"
+    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,6 @@
     "@mongodb-model/db-query": "^0.0.10000",
     "@mongodb-model/db-query-validator": "^0.0.0",
     "dotenv": "16.0.3",
-    "mongodb": "4.11.0",
-    "vitest": "0.25.1"
+    "mongodb": "4.11.0"
   }
 }

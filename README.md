@@ -1,22 +1,22 @@
 # db-callback
 
 db-callback is very simple yet very powerful tool for interacting with
-mongodb database and making internal or external API calls. Under the hood model is a wrapper for the 
+mongodb database and making internal or external API calls. Under the hood db-callback is a wrapper for the 
 nodejs mongodb driver. It also extracts away the complexities commonly encountered in NodeJs Mongodb
 driver or Mongoose.js. It is also a duplex stream, specifically a Transform stream. It uses
 full power of the Nodejs mongodb driver and of the NodeJs Transform Stream API. In other words, everything you can do with mongodb NodeJs driver, Mongoose.js and NodeJs Transform API you can do with db-callback! db-callback is centrally very highly event driven. Its common use is by extension or by using object destruction to get the instance methods needed or by simply using class instantiation.
 
 ## Note 
-The model object is an ES6 Class with an unlimited constructor parameters. All of the constructor parameters are optional! However, the most important constructor parameter is the first parameter, because it an object that defines your database connection parameters.
+The db-callback object is an ES6 Class with an unlimited constructor parameters. All of the constructor parameters are optional! However, the most important constructor parameter is the first parameter, because it an object that defines your database connection parameters.
 
 ## How it works 
-Simple and easy! On average you need no more than 3 lines of code for each of your queries or CRUD operations, even with the most complex ones. For event base queries, model emits two events: a ***success*** event and an ***error*** event.
+Simple and easy! On average you need no more than 3 lines of code for each of your queries or CRUD operations, even with the most complex ones. For event base queries, db-callback emits two events: a ***success*** event and an ***error*** event.
 
 ***Success event***:
- The success event name is the name of model method executed in the query.
+ The success event name is the name of db-callback method executed in the query.
 
 ***Error event***:
- The error event name is the name of model method executed in the query plus the string "-error".
+ The error event name is the name of db-callback method executed in the query plus the string "-error".
 
 **Explanation** :
  If you use the ***create*** method in your query, model will emit ***success event create*** with the created object or ***error event create-error*** with the error object.
@@ -60,6 +60,7 @@ const User = new Model({collection: 'users'});
 // Connecting to multiple databases
 const BlogUser = new Model({db: 'blog', collection: 'users'})
 const WorkChat = new Model({db: 'work', collection: 'chats'})
+const ArticleUser = new Model({db: 'article', collection: 'users'});
 const ForumUser = new Model({db: 'forum', collection: 'users'})
 
 
@@ -144,7 +145,6 @@ db.on('create', console.log)
 db.on('create-error', console.log)
 
 // findByEmail 
-
 db.findByEmail('Rey.Padberg@karina.biz')
 db.on('findByEmail', console.log)
 db.on('findByEmail-error', console.log)
@@ -157,6 +157,8 @@ db.on('findByEmail-error', console.log)
 
 const DB = require('@mongodb-model/db-callback');
 const db = new DB();
+
+// The following functions are available on db, the DB instance, as methods.
 
 createCollection(collectionName = 'users');
 dropCollection(collectionName = 'users');
