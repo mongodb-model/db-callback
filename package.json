@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/mongodb-model/db-callback#readme",
   "dependencies": {
+    "@mongodb-model/db-query": "^0.0.10000",
+    "@mongodb-model/db-query-validator": "^0.0.0",
     "dotenv": "16.0.3",
     "mongodb": "4.11.0",
     "vitest": "0.25.1"

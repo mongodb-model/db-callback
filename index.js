@@ -16,6 +16,8 @@
 
 const { EventEmitter } = require("events");
 const { MongoClient } = require("mongodb");
+const QueryValidator  = require("@mongodb-model/db-query-validator");
+const Query = require("@mongodb-model/db-query");
 
 require('dotenv').config()
 class Callback extends require("./base") {
@@ -34,7 +36,7 @@ class Callback extends require("./base") {
         // auto invoke methods
         this.autoinvoker(Callback);
         // add other classes method if methods do not already exist. Argument order matters!
-        // this.methodizer(..classList);
+        this.methodizer(QueryValidator, Query);
         //Set the maximum number of listeners to infinity
         this.setMaxListeners(Infinity);
       }
@@ -68,7 +70,7 @@ class Callback extends require("./base") {
         fn
       );
   }
-
+//mongodb://localhost:27017/
   /**
    * @name autoinvoked
    * @function
@@ -101,7 +103,7 @@ class Callback extends require("./base") {
     obj[name] = name;
     return obj;
   }
-  createDatabase(databaseName = this.dbName) {
+  createDatabase(databaseName = this.db) {
     this.validateDbName(databaseName, "createDatabase-error");
     const dbFn = (error, db) => {
       if (error) return this.emit("createDatabase-error", error);
@@ -110,7 +112,8 @@ class Callback extends require("./base") {
       db.close();
     };
     MongoClient.connect(
-      `${ENV.DATABASE.URL}${databaseName}`,
+      // `${process.env.DATABASE_URL}${databaseName}`,
+      `${this.uri}`,
       { useUnifiedTopology: true },
       dbFn
     );
@@ -823,3 +826,4 @@ class Callback extends require("./base") {
 }
 
 module.exports = Callback;
+
