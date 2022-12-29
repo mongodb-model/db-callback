@@ -23,15 +23,6 @@
     "@aws-sdk/util-utf8-browser" "^3.0.0"
     tslib "^1.11.1"
 
-"@aws-crypto/sha256-js@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-2.0.2.tgz"
-  integrity sha512-iXLdKH19qPmIC73fVCrHWCSYjN/sxaAvZ3jNNyw6FclmHyjLKg0f69WlC9KTnyElxCR5MO9SKaG00VwlJwyAkQ==
-  dependencies:
-    "@aws-crypto/util" "^2.0.2"
-    "@aws-sdk/types" "^3.110.0"
-    tslib "^1.11.1"
-
 "@aws-crypto/sha256-js@2.0.0":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-2.0.0.tgz"
@@ -39,6 +30,15 @@
   dependencies:
     "@aws-crypto/util" "^2.0.0"
     "@aws-sdk/types" "^3.1.0"
+    tslib "^1.11.1"
+
+"@aws-crypto/sha256-js@^2.0.0":
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-2.0.2.tgz"
+  integrity sha512-iXLdKH19qPmIC73fVCrHWCSYjN/sxaAvZ3jNNyw6FclmHyjLKg0f69WlC9KTnyElxCR5MO9SKaG00VwlJwyAkQ==
+  dependencies:
+    "@aws-crypto/util" "^2.0.2"
+    "@aws-sdk/types" "^3.110.0"
     tslib "^1.11.1"
 
 "@aws-crypto/supports-web-crypto@^2.0.0":
@@ -590,7 +590,7 @@
     "@aws-sdk/types" "3.226.0"
     tslib "^2.3.1"
 
-"@aws-sdk/types@^3.1.0", "@aws-sdk/types@^3.110.0", "@aws-sdk/types@3.226.0":
+"@aws-sdk/types@3.226.0", "@aws-sdk/types@^3.1.0", "@aws-sdk/types@^3.110.0":
   version "3.226.0"
   resolved "https://registry.npmjs.org/@aws-sdk/types/-/types-3.226.0.tgz"
   integrity sha512-MmmNHrWeO4man7wpOwrAhXlevqtOV9ZLcH4RhnG5LmRce0RFOApx24HoKENfFCcOyCm5LQBlsXCqi0dZWDWU0A==
@@ -719,7 +719,7 @@
     "@aws-sdk/types" "3.226.0"
     tslib "^2.3.1"
 
-"@aws-sdk/util-utf8-browser@^3.0.0", "@aws-sdk/util-utf8-browser@3.188.0":
+"@aws-sdk/util-utf8-browser@3.188.0", "@aws-sdk/util-utf8-browser@^3.0.0":
   version "3.188.0"
   resolved "https://registry.npmjs.org/@aws-sdk/util-utf8-browser/-/util-utf8-browser-3.188.0.tgz"
   integrity sha512-jt627x0+jE+Ydr9NwkFstg3cUvgWh56qdaqAMDsqgRlKD21md/6G226z/Qxl7lb1VEW2LlmCx43ai/37Qwcj2Q==
@@ -734,16 +734,18 @@
     "@aws-sdk/util-buffer-from" "3.208.0"
     tslib "^2.3.1"
 
-"@mongodb-model/db-query-validator@file:../db-query-validator":
-  version "0.0.10000"
-  resolved "file:../db-query-validator"
+"@mongodb-model/db-query-validator@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@mongodb-model/db-query-validator/-/db-query-validator-0.0.10.tgz#e6f86967d13775000dc35f9e5b00e5f77de9122a"
+  integrity sha512-DHYWv42Gsnw0QlFMHhVopAYQWj8qZYp7FMMrJh2eCu9H53HabpEhXazDNNzQgYlVIu1bzcIB3MsTs/GUuf/fTw==
   dependencies:
     dotenv "16.0.3"
     mongodb "4.11.0"
 
-"@mongodb-model/db-query@file:../db-query":
-  version "0.0.100001"
-  resolved "file:../db-query"
+"@mongodb-model/db-query@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@mongodb-model/db-query/-/db-query-0.0.10.tgz#288c487bae6c3013404a9561bfd59c1ad0207aa9"
+  integrity sha512-5bXpDNWPhSQbz0UvyF2d+DJJ3vFlpCBfnT1ciEfnW0pHPkDwKRCyDJdiSN/Tz5IGo+vyU3ipv7ypudM02H5GIA==
   dependencies:
     dotenv "16.0.3"
     mongodb "4.11.0"
