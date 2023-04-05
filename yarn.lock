@@ -734,18 +734,14 @@
     "@aws-sdk/util-buffer-from" "3.208.0"
     tslib "^2.3.1"
 
-"@mongodb-model/db-query-validator@^0.0.10":
+"@mongodb-model/db-query-validator@../db-query-validator":
   version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@mongodb-model/db-query-validator/-/db-query-validator-0.0.10.tgz#e6f86967d13775000dc35f9e5b00e5f77de9122a"
-  integrity sha512-DHYWv42Gsnw0QlFMHhVopAYQWj8qZYp7FMMrJh2eCu9H53HabpEhXazDNNzQgYlVIu1bzcIB3MsTs/GUuf/fTw==
   dependencies:
     dotenv "16.0.3"
     mongodb "4.11.0"
 
-"@mongodb-model/db-query@^0.0.10":
+"@mongodb-model/db-query@../db-query":
   version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@mongodb-model/db-query/-/db-query-0.0.10.tgz#288c487bae6c3013404a9561bfd59c1ad0207aa9"
-  integrity sha512-5bXpDNWPhSQbz0UvyF2d+DJJ3vFlpCBfnT1ciEfnW0pHPkDwKRCyDJdiSN/Tz5IGo+vyU3ipv7ypudM02H5GIA==
   dependencies:
     dotenv "16.0.3"
     mongodb "4.11.0"

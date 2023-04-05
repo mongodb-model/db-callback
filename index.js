@@ -312,10 +312,11 @@ class Callback extends require("./base") {
    *
    */
   find(query = {}, projection = {}, collectionName = this.collection) {
-    this.on("validatedQueryProjection", () => {
-      this.findCallback(query, projection, collectionName);
-    });
-    this.validateQueryProjection(query, projection, "find-error");
+    console.log(query)
+    // this.on("validatedQueryProjection", () => {
+    //   this.findCallback(query, projection, collectionName);
+    // });
+    // this.validateQueryProjection(query, projection, "find-error");
   }
 
   /**
